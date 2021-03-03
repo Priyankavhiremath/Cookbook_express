@@ -1,0 +1,50 @@
+
+.landing-page{
+    background: white url("./assets/maarten-van-den-heuvel-EzH46XCDQRY-unsplash.jpg") scroll center;
+    background-size: cover;
+    height: 50vh;
+    color: #ce6bce;
+  }
+
+  .wrapper{
+    background-color: rgba(0,0,0,0.7);
+    height: 100%;
+  }
+
+  
+.meal_image{
+    width: 60%;
+    height: auto;
+    
+    
+}
+
+
+
+/* .Recipe{
+    border-radius: 10px; 
+    box-shadow: 0px 5px 20px rgb(71, 71, 71);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background:papayawhip;
+    align-items: center;
+    min-width: 40%;
+ 
+ } */
+
+ .recipebackground{
+    background-image: url("bg_img.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+ }
+
+ .card_image{
+     object-fit: contain;
+ }
