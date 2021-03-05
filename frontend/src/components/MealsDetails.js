@@ -10,9 +10,9 @@ const MealsDetails = () => {
 
     //my thinking was, that here we need to target the description?
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/recipes/description`).then((res)=>{
+        Axios.get(`http://localhost:5000/api/recipes`).then((res)=>{
             console.log(res.data)
-            setMealsDetails(res.data)
+            setmeals(res.data)
         }).catch((err)=>{
             console.error(err)
         })
@@ -26,7 +26,7 @@ const MealsDetails = () => {
                     {
                         meals &&
                         meals
-                        //not sure if we need filter here and if i got the correct mealdots
+                            .filter((m)=>m.mealtype == mealtype)
                             .map((meal) => {
                                 return (
                                     <Fragment key={meal.id}> 
