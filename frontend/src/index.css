@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.bg-teal , .btn-teal{
+  background-color: blueviolet !important;
+}
+.text-teal{
+  color: #31bed1 !important;
+}
+.bg-light-blue{
+  background-color: #e9e9e9;
+}
+
