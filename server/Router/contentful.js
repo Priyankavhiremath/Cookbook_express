@@ -9,9 +9,8 @@ Router.get('/', (req, res) =>{
     pool
         .query("Select * FROM Recipes")
         .then((data) => res.json(data.rows))
-        .catch((err) => res.sendStatus(500));
+        .catch((err) => res.sendStatus(500))
 } )
-
 //////get one recipe *********************************************
 Router.get("/:id", (req, res)=>{
     const {id} = req.params;
@@ -20,17 +19,13 @@ Router.get("/:id", (req, res)=>{
         .then(data => res.json(data.rows))
         .catch(err => res.sendStatus(500))
 })
-
-
 //////delete one recipe ********************************************
-
 Router.delete('/:id' , (req,res)=>{
     const {id} = req.params;
     const deleteOne={
         text:`DELETE FROM recipes WHERE id=$1 RETURNING *`,
         values: [id]
     }
-
     pool
     .query(deleteOne)
     .then((data)=>res.status(201).json(data.rows))
@@ -39,8 +34,8 @@ Router.delete('/:id' , (req,res)=>{
 })
 //////Post one recipe TIM ************************************************
   Router.post("/", (req, res) => {
-    // console.log(req.body)
-    const { title, description, ingredients, directions, mealtype, image, cook_time, prep_time, } = req.body;
+    console.log(req.body)
+    const { title, description, ingredients, directions, mealtype, image, cook_time, prep_time } = req.body;
 
   const createOneRecipes = {
     text: `
@@ -48,14 +43,16 @@ Router.delete('/:id' , (req,res)=>{
     VALUES($1, $2, $3, $4, $5, $6, $7, $8)
     RETURNING *
     `,
-    values: [title,description,ingredients,directions, mealtype, image, cook_time, prep_time,]
+    values: [title,description,ingredients,directions, mealtype, image, cook_time, prep_time]
 }
      pool
         .query(createOneRecipes)
         .then((data) => res.status(201).json(data.rows))
-        .catch((err) => res.sendStatus(500));
+        .catch((err) => {
+            res.sendStatus(500)
+            console.log(err)})
+   
 });
-
 //////put one recipe priyanka ************************************************************************
 Router.put('/:id', (req, res) =>{
     const {id} =req.params
@@ -74,7 +71,4 @@ Router.put('/:id', (req, res) =>{
         .then(data => res.status(200).json(data.rows))
         .catch(err => res.sendStatus(500))
 })
-
-
-
 module.exports= Router
