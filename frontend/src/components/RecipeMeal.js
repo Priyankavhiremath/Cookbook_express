@@ -10,7 +10,7 @@ const RecipeMeal = () => {
     const [receipe, setReceipe] = useState();
 
     useEffect(() => {
-        Axios.get(`http://localhost:5000/api/recipes/${RecipeId}`)
+        Axios.get(`http://localhost:3000/api/recipes/${RecipeId}`)
             .then((res) => {
 
                 // let RecipeMeal = res.items.find((meal) => {
@@ -38,7 +38,7 @@ const RecipeMeal = () => {
                     <div className="row m-3 d-flex justify-content-center">
                         <p>{receipe.description}</p>
                         <img className="shadow-sm p-3 bg-light border rounded w-75"
-                             src={`http://localhost:5000/image/${receipe.image}`} alt={receipe.image}/>
+                             src={`http://localhost:3000/image/${receipe.image}`} alt={receipe.image}/>
                     </div>
                     <div>
                         <ul className="list-group list-group-horizontal-md justify-content-center">

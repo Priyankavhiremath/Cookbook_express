@@ -20,11 +20,11 @@ let submitMeal = (event)=>{
     event.preventDefault();
 
         if(newmeal.title !=="" && newmeal.description !==""&& newmeal.ingredients !=="" && newmeal.directions !=="" && newmeal.mealtype !=="" && newmeal.image !=="" && newmeal.cook_time !=="" && newmeal.prep_time !==""){
-            let url=`http://localhost:5000/api/recipes`
+            let url=`http://localhost:3000/api/recipes`
             axios.post(url,newmeal).then((res)=>{
-                    alert("added!")
+                    alert("Recipe successfully added!")
             }).catch((err)=>{
-                alert("test your details")
+                alert("Recipe addition unsuccesful \n" + err)
             })
 
             setnewMeal({
@@ -39,7 +39,7 @@ let submitMeal = (event)=>{
             })
 
         }else{
-            alert("please your all of forms")
+            alert("Please fill all the fields!")
         }
 
 }

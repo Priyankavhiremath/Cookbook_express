@@ -18,7 +18,7 @@ const Meals = () => {
     // }, []);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/recipes`).then((res)=>{
+        axios.get(`http://localhost:3000/api/recipes`).then((res)=>{
             console.log(res.data)
             setMeals(res.data)
         }).catch((err)=>{
@@ -33,12 +33,12 @@ const Meals = () => {
                 <h3 className="text-danger">BREAKFAST</h3>
                 <div className="row">
                     {meals && meals
-                        
+                        .filter(meal => meal.mealtype==='breakfast')
                         .map((meal) => {
                             return (
                                 <Fragment key={meal.id}>
                                     <div className="col-md-4">
-                                        <MealCard mealpic={`http://localhost:5000/image/${meal.image}`}
+                                        <MealCard mealpic={`http://localhost:3000/image/${meal.image}`}
                                                   title={meal.title} describe={meal.description}
                                                   mealtype={meal.mealtype} mealid={meal.id}/>
                                     </div>
@@ -48,11 +48,35 @@ const Meals = () => {
                 </div>
                 <h3 className="mt-5 text-black">LUNCH</h3>
                 <div className="row">
-                  
+                    {meals && meals
+                        .filter(meal => meal.mealtype==='lunch')
+                        .map((meal) => {
+                            return (
+                                <Fragment key={meal.id}>
+                                    <div className="col-md-4">
+                                        <MealCard mealpic={`http://localhost:3000/image/${meal.image}`}
+                                                  title={meal.title} describe={meal.description}
+                                                  mealtype={meal.mealtype} mealid={meal.id}/>
+                                    </div>
+                                </Fragment>
+                            );
+                    })}                  
                 </div>
                 <h3 className="mt-5 text-black">DINNER</h3>
                 <div className="row">
-                   
+                    {meals && meals
+                        .filter(meal => meal.mealtype==='dinner')
+                        .map((meal) => {
+                            return (
+                                <Fragment key={meal.id}>
+                                    <div className="col-md-4">
+                                        <MealCard mealpic={`http://localhost:3000/image/${meal.image}`}
+                                                  title={meal.title} describe={meal.description}
+                                                  mealtype={meal.mealtype} mealid={meal.id}/>
+                                    </div>
+                                </Fragment>
+                            );
+                    })}                   
                 </div>
             </div>
         </Fragment>
