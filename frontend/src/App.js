@@ -6,6 +6,7 @@ import Meals from "./components/Meals";
 import MealsDetails from "./components/MealsDetails";
 import Postpage from "./components/postpage/Postpage";
 import RecipeMeal from "./components/RecipeMeal"
+// import Deletepage from "./components/deletepage/Deletepage";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
 
         <Route exact path="/" component={Home} />
         <Route path="/meals/posts" component={Postpage} />
+        {/* <Route path="/meals/delete" component={Deletepage} /> */}
         <Route path="/meals/:mealtype/:mealId" component={RecipeMeal} />
         <Route path="/meals/:mealtype" component={MealsDetails} />
         <Route path="/meals/" component={Meals} />

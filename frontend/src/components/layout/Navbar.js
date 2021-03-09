@@ -19,6 +19,15 @@ const Navbar = () => {
                                 <NavLink to="/meals/dinner" className="nav-link">Dinner</NavLink>
                             </li>
                         </ul>
+
+
+                        <ul className="navbar-nav ml-auto">
+                            <li className="nav-item ">
+                                <NavLink to="/meals/posts" className="nav-link">Add Recipe</NavLink>
+                            </li>
+
+                        </ul>
+                        
                     </div>
                 </div>
             </nav>
@@ -27,3 +36,5 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+

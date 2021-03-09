@@ -3,7 +3,7 @@ import {Client} from "../utils/Client";
 import MealCard from './layout/MealCard';
 import Axios from 'axios'
 import axios from "axios";
-const Meals = () => {
+const Deletepage = () => {
     const [meals, setMeals] = useState([]);
 
     // useEffect(() => {
@@ -29,7 +29,7 @@ const Meals = () => {
 
     return (
         <Fragment>
-            <div className='container mt-4 p-5 recipe shadow-sm border border-dark rounded recipebackground'>
+                        <div className='container mt-4 p-5 recipe shadow-sm border border-dark rounded recipebackground'>
                 <h3 className="text-black">BREAKFAST</h3>
                 <div className="row">
                     {meals && meals
@@ -83,4 +83,4 @@ const Meals = () => {
     );
 };
 
-export default Meals;
+export default Deletepage;

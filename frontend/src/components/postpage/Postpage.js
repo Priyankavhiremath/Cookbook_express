@@ -52,8 +52,8 @@ let submitMeal = (event)=>{
       <div className="container">
         <div className="row">
           <div className="col-md-5 m-auto">
-            <div className="card animated zoomIn">
-              <div className="card-header bg-teal text-white text-center">
+            <div className="card animated zoomIn mt-5">
+              <div className="card-header bg-secondary text-white text-center">
                 <h3>New Recipe</h3>
               </div>
               <div className="card-body ">
@@ -175,7 +175,7 @@ let submitMeal = (event)=>{
                         type="submit"
                         value="Save"
                         onClick={submitMeal}
-                        className="btn btn-teal btn-sm"
+                        className="btn btn-secondary btn-sm"
                       />
                     </div>
                   </div>
